@@ -1,0 +1,20 @@
+{{#each postData.post_comments}}
+<div data-userid="{{userId}}" id="comment">
+  <div class="card" style="width: 50rem;">
+  <div class="card-body">
+    <h6 class="card-subtitle mb-2 text-muted">{{comment_creator.username}} on {{formatTime createdAt}}</h6>
+    <p class="card-text input-content-{{userId}}" contenteditable="true">{{commentContent}}</p>
+
+    {{!-- Add button here and custom helper to render update and delete if the userId matches the session userId --}}
+    {{!--
+    EXPLANATION
+    1)  We first need the npm package handlebars-helpers to use the #eq helper, which compares two block: https://github.com/helpers/handlebars-helpers#eq
+    2)  Then, we grab the userId from the comment, and the user_id property in the parent (we need to use the ../ to reference the parent).
+    3)  Then as per the comparison, generate the respective block.
+    --}}
+    {{#if (isEqual userId ../userId)}}
+      {{> comment-done }}
+      {{else}}
+    {{/if}}
+ </div>
+{{/each}}

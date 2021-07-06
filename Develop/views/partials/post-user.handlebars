@@ -1,0 +1,11 @@
+{{#each posts}}
+<body class="text-center">
+  <div class="card" style="width: 50rem; text-decoration:none;">
+  <div class="card-body">
+    <a href="/post/{{id}}"><h5 class="card-title">{{blogContent}}</a></h5>
+    <h6 class="card-subtitle mb-2 text-muted">Created by {{post_creator.username}} on {{createdAt}}</h6></a>
+    <p class="card-text">This a blog post was created by another user.</p>
+    <button><a href="/post/{{id}}" class="card-link new-comment" style="text-decoration:none; color:black;">Add a Comment</a></button>
+  </div>
+</div>
+{{/each}}

@@ -1,0 +1,13 @@
+<main class="form-comment">
+  <div class="mb-4">
+    <label for="exampleFormControlTextarea1" class="form-label">Leave a comment</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    {{#if logged_in}}
+    <button class="mb-3 btn btn-sm btn-primary">Update Comment</button>
+    <button class="mb-3 btn btn-sm btn-primary">Delete Comment</button>
+    {{/if}}
+    {{#unless logged_in}}
+      <button class="mb-3 btn btn-sm btn-primary">Add Comment</button>
+    {{/unless}}
+  </div>
+</main>

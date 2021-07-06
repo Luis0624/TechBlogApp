@@ -1,0 +1,15 @@
+<body class="text-center">
+  <div class="card" style="width: 50rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{postData.blogContent}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Created by {{postData.post_creator.username}} on {{postData.createdAt}}</h6></a>
+    <p class="card-text">This a blog post was created by another user.</p>
+<ul>
+      <li><textarea class="input-comment"></textarea></li>
+    <li><button type="button" class="card-link new-comment" data-postid="{{postData.id}}">Add a Comment</button></li>
+  </div>
+</div>
+
+{{> comment-user}}
+
+<script src="../js/comment-admin.js"></script>

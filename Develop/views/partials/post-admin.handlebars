@@ -1,0 +1,11 @@
+<h1 class="h2 mb-3 fw-normal">Your Blog Posts:</h1>
+{{#each usersPosts.post_creator}}
+<div class="postid-{{id}}" id="dashboard-main">
+  <div class="card" style="width: 50rem;">
+  <div class="card-body" data-postid={{id}}>
+    <h5 class="card-title blog-title-{{id}}" contenteditable="true">{{blogContent}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Created on {{createdAt}}</h6>
+    <button type="button" class="btn-primary update-post" data-postid="{{id}}">Update</button>
+    <button type="button" class="btn-primary delete-post" data-postid="{{id}}">Delete</button>
+  </div>
+{{/each}}
